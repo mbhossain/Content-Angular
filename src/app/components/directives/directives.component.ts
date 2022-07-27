@@ -25,6 +25,9 @@ export class DirectivesComponent implements OnInit {
   public colorClassName = 'colorClass';
   public backgroundClassName = 'backgroundClass';
 
+  public ngStyleTitle = 'ngStyle';
+  public colorValue = 'green';
+
   constructor() { }
 
   ngOnInit(): void {

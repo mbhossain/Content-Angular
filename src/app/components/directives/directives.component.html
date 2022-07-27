@@ -46,3 +46,18 @@
 <div [ngClass]="{'colorClass': false, 'backgroundClass': true}">
     <h5>Class with expresion.</h5>
 </div>
+
+<h4>{{ngStyleTitle}}</h4>
+<hr>
+
+<div [ngStyle]="{'color': 'blue'}">
+    <h5>Learning ngStyle.</h5>
+</div>
+
+<div [ngStyle]="{'color': colorValue}">
+    <h5>Learning ngStyle.</h5>
+</div>
+
+<div [ngStyle]="{'color': colorValue, 'background-color': '#ddd'}">
+    <h5>Learning ngStyle.</h5>
+</div>
