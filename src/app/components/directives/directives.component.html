@@ -1,4 +1,5 @@
-<h4>{{ngSwitchtitle}}</h4>
+<h4>{{ngSwitchTitle}}</h4>
+<hr>
 
 <div [ngSwitch]="color">
     <div *ngSwitchCase="'red'">You picked red color</div>
@@ -26,3 +27,22 @@
     <div *ngSwitchCase="weekDay==='Saturday'|| weekDay==='Friday'">Selected day is Weekend.</div>
 
 </ng-container>
+
+<h4>{{ngClassTitle}}</h4>
+<hr>
+
+<div [ngClass]="colorClassName">
+    <h5>Single Class.</h5>
+</div>
+
+<div [ngClass]="[colorClassName, backgroundClassName]">
+    <h5>Multiple Class.</h5>
+</div>
+
+<div [ngClass]="{'colorClass': true, 'backgroundClass': false}">
+    <h5>Class with expresion.</h5>
+</div>
+
+<div [ngClass]="{'colorClass': false, 'backgroundClass': true}">
+    <h5>Class with expresion.</h5>
+</div>
