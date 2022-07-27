@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
   }
   `]
 })
-export class ClassBindingComponent implements OnInit {
+export class ComponentStylingComponent implements OnInit {
   public name = 'Class Binding';
   public successClass = 'text-success';
   public hasError = true;

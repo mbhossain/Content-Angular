@@ -1,0 +1,8 @@
+<h4>{{ngSwitchtitle}}</h4>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You picked red color</div>
+    <div *ngSwitchCase="'blue'">You picked blue color</div>
+    <div *ngSwitchCase="'green'">You picked green color</div>
+    <div *ngSwitchDefault>You picked again</div>
+</div>
