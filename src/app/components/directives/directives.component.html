@@ -6,3 +6,23 @@
     <div *ngSwitchCase="'green'">You picked green color</div>
     <div *ngSwitchDefault>You picked again</div>
 </div>
+
+<ng-container [ngSwitch]="weekDay">
+    <div *ngSwitchCase="'Saturday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="'Sunday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="'Monday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="'Tuesday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="'Wednesday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="'Thusday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="'Friday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchDefault>No condition is matching.</div>
+</ng-container>
+
+<ng-container [ngSwitch]="true">
+    <div
+        *ngSwitchCase="weekDay==='Sunday' || weekDay==='Monday' || weekDay==='Tuesday' || weekDay==='Wednesday' || weekDay==='Thusday'">
+        Selected day is working day.</div>
+    <div *ngSwitchCase="'sunday'">Selected day is {{weekDay}}.</div>
+    <div *ngSwitchCase="weekDay==='Saturday'|| weekDay==='Friday'">Selected day is Weekend.</div>
+
+</ng-container>

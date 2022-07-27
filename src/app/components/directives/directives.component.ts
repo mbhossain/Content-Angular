@@ -9,6 +9,7 @@ export class DirectivesComponent implements OnInit {
 
   public ngSwitchtitle = 'ngSwitch';
   public color = 'red';
+  public weekDay = 'Saturday';
 
   constructor() { }
 
