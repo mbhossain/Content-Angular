@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { ParentComponent } from './components/component-interaction/parent/parent.component';
@@ -10,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ComponentStylingComponent } from './components/conponent-styling/component-styling.component';
 import { ViewComponent } from './components/view-encapsulation/view/view.component';
 import { DirectivesComponent } from './components/directives/directives.component';
+import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,13 @@ import { DirectivesComponent } from './components/directives/directives.componen
     ComponentOneComponent,
     ComponentStylingComponent,
     ViewComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    NgxToastrComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],
