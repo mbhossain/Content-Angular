@@ -29,7 +29,11 @@ import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     AppRoutingModule
   ],
   providers: [],
