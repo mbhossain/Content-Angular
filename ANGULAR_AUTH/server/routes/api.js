@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const User = require('../models/user');
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const user = require('../models/user');
 const db = "mongodb+srv://mbhossain3108:mbhossain3108@cluster0.j255j2s.mongodb.net/eventsdb?retryWrites=true&w=majority"
 
 mongoose.connect(db, err => {
@@ -27,6 +28,108 @@ router.post('/register', (req, res) => {
             res.status(200).send(registeredUser)
         }
     })
+})
+
+router.post('/login', (req, res) => {
+    let userData = req.body
+    User.findOne({ email: userData.email }, (err, user) => {
+        if (err) {
+            console.log(err)
+        } else {
+            if (!user) {
+                res.status(401).send('Invalid Email')
+            } else
+                if (user.password !== userData.password) {
+                    res.status(401).send('Invalid Password')
+                } else {
+                    res.status(200).send(user)
+                }
+        }
+    })
+})
+
+router.get('/events', (req, res) => {
+    let events = [
+        {
+            "_id": "1",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "2",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "3",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "4",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "5",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "6",
+            "name": "Auto Expo",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        }
+    ]
+    res.json(events)
+})
+
+router.get('/special', (req, res) => {
+    let specialEvents = [
+        {
+            "_id": "1",
+            "name": "Auto Expo Special",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "2",
+            "name": "Auto Expo Special",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "3",
+            "name": "Auto Expo Special",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "4",
+            "name": "Auto Expo Special",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "5",
+            "name": "Auto Expo Special",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        },
+        {
+            "_id": "6",
+            "name": "Auto Expo Special",
+            "description": "lorem ipsum",
+            "date": "2012-04-23T18:25:43.511Z"
+        }
+    ]
+    res.json(specialEvents)
 })
 
 module.exports = router
