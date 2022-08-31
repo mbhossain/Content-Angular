@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { EventsComponent } from './events/events.component';
 import { SpecialEventsComponent } from './special-events/special-events.component';
 import { AuthenticationComponent } from './authentication.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AuthenticationComponent } from './authentication.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     AuthenticationRoutingModule
   ]
 })
