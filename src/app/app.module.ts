@@ -1,8 +1,12 @@
+/* Angular Stuff */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { AppComponent } from './app.component';
 import { ParentComponent } from './components/component-interaction/parent/parent.component';
 import { ChildComponent } from './components/component-interaction/child/child.component';
@@ -16,27 +20,27 @@ import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ParentComponent,
-    ChildComponent,
-    ComponentTwoComponent,
-    ComponentOneComponent,
-    ComponentStylingComponent,
-    ViewComponent,
-    DirectivesComponent,
-    NgxToastrComponent
+    AppComponent
+    , ParentComponent
+    , ChildComponent
+    , ComponentTwoComponent
+    , ComponentOneComponent
+    , ComponentStylingComponent
+    , ViewComponent
+    , DirectivesComponent
+    , NgxToastrComponent
+  ]
+  , imports: [
+    BrowserModule
+    , BrowserAnimationsModule
+    , ToastrModule.forRoot({
+      timeOut: 3500
+      , positionClass: 'toast-bottom-right'
+      , preventDuplicates: true
+    })
+    , AppRoutingModule
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 3500,
-      positionClass: 'toast-bottom-right',
-      preventDuplicates: true,
-    }),
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
+  , bootstrap: [AppComponent]
 })
 export class AppModule { }

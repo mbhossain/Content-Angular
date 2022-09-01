@@ -1,4 +1,9 @@
+/* Angular Stuff */
 import { Component, OnInit } from '@angular/core';
+
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { EventService } from '../../services/event.service';
 
 @Component({

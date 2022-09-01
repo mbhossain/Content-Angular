@@ -1,4 +1,9 @@
+/* Angular Stuff */
 import { Component, OnInit, ViewChild } from '@angular/core';
+
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { ChildComponent } from '../child/child.component';
 
 @Component({
@@ -14,7 +19,7 @@ export class ParentComponent implements OnInit {
   @ViewChild(ChildComponent, { static: true })
   childComponent!: ChildComponent;
 
-    constructor() { }
+  constructor() { }
 
   ngOnInit(): void {
   }

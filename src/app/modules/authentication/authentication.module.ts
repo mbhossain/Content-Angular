@@ -1,8 +1,12 @@
+/* Angular Stuff */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -20,14 +24,14 @@ import { AuthGuard } from './guards/auth.guard';
     , RegisterComponent
     , EventsComponent
     , SpecialEventsComponent
-  ],
-  imports: [
+  ]
+  , imports: [
     CommonModule
     , FormsModule
     , HttpClientModule
     , AuthenticationRoutingModule
-  ],
-  providers: [
+  ]
+  , providers: [
     AuthService
     , EventService
     , AuthGuard

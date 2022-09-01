@@ -1,3 +1,4 @@
+/* Angular Stuff */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({

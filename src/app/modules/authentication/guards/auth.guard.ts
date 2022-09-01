@@ -1,6 +1,10 @@
+/* Angular Stuff */
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
