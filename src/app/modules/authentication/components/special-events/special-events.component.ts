@@ -7,7 +7,7 @@ import { EventService } from '../../services/event.service';
   styleUrls: ['./special-events.component.css']
 })
 export class SpecialEventsComponent implements OnInit {
-  public specialEvents = []
+  public specialEvents: any = []
 
   constructor(private _eventService: EventService) { }
 
