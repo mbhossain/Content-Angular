@@ -11,24 +11,26 @@ import { SpecialEventsComponent } from './components/special-events/special-even
 import { AuthenticationComponent } from './authentication.component';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
+import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
   declarations: [
-    AuthenticationComponent,
-    LoginComponent,
-    RegisterComponent,
-    EventsComponent,
-    SpecialEventsComponent
+    AuthenticationComponent
+    , LoginComponent
+    , RegisterComponent
+    , EventsComponent
+    , SpecialEventsComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    AuthenticationRoutingModule
+    CommonModule
+    , FormsModule
+    , HttpClientModule
+    , AuthenticationRoutingModule
   ],
   providers: [
-    AuthService,
-    EventService
+    AuthService
+    , EventService
+    , AuthGuard
   ]
 })
 export class AuthenticationModule { }
