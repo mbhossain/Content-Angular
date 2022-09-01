@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,7 +14,9 @@ export class LoginComponent implements OnInit {
     password: null
   }
 
-  constructor(private _auth: AuthService) { }
+  constructor(
+    private _auth: AuthService
+    , private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +24,10 @@ export class LoginComponent implements OnInit {
   loginUser() {
     this._auth.loginUser(this.loginUserData)
       .subscribe(
-        res => console.log(res),
+        res => {
+          localStorage.setItem('token', res.token);
+          this._router.navigate(['/authentication/special']);
+        },
         err => console.log(err)
       )
   }
