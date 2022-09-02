@@ -1,7 +1,7 @@
 /* Angular Stuff */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 /* 3rd party libraries */
@@ -16,6 +16,7 @@ import { AuthenticationComponent } from './authentication.component';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { AuthGuard } from './guards/auth.guard';
+import { TokenInterceptorService } from './token-interceptor/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,11 @@ import { AuthGuard } from './guards/auth.guard';
     AuthService
     , EventService
     , AuthGuard
+    , {
+      provide: HTTP_INTERCEPTORS
+      , useClass: TokenInterceptorService
+      , multi: true
+    }
   ]
 })
 export class AuthenticationModule { }

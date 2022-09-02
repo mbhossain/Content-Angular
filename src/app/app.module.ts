@@ -2,9 +2,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
 
 /* 3rd party libraries */
+import { ToastrModule } from 'ngx-toastr';
 
 /* Our own stuff */
 import { AppComponent } from './app.component';
