@@ -1,5 +1,11 @@
+/* Angular Stuff */
 import { Component, OnInit } from '@angular/core';
+
+/* 3rd party libraries */
 import { ToastrService } from 'ngx-toastr';
+
+/* Our own stuff */
+
 
 @Component({
   selector: 'app-ngx-toastr',

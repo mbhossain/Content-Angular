@@ -1,4 +1,10 @@
+/* Angular Stuff */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,7 +18,9 @@ export class RegisterComponent implements OnInit {
     password: null
   }
 
-  constructor(private _auth: AuthService) { }
+  constructor(
+    private _auth: AuthService
+    , private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +28,10 @@ export class RegisterComponent implements OnInit {
   registerUser() {
     this._auth.registerUser(this.registerUserData)
       .subscribe(
-        res => console.log(res),
+        res => {
+          localStorage.setItem('token', res.token);
+          this._router.navigate(['/authentication/special'])
+        },
         err => console.log(err)
       )
   }

@@ -1,5 +1,10 @@
+/* Angular Stuff */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+/* 3rd party libraries */
+
+/* Our own stuff */
 import { ComponentStylingComponent } from './components/conponent-styling/component-styling.component';
 import { ParentComponent } from './components/component-interaction/parent/parent.component';
 import { ViewComponent } from './components/view-encapsulation/view/view.component';
