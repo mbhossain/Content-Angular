@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)
   },
+  {
+    path: 'tree-menu',
+    loadChildren: () => import('./modules/tree-menu/tree-menu.module').then(m => m.TreeMenuModule)
+  },
 ];
 
 @NgModule({
