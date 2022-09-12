@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'tree-menu',
     loadChildren: () => import('./modules/tree-menu/tree-menu.module').then(m => m.TreeMenuModule)
   },
+  {
+    path: 'angular-forms',
+    loadChildren: () => import('./modules/angular-forms/angular-forms.module').then(m => m.AngularFormsModule)
+  },
 ];
 
 @NgModule({
