@@ -1,14 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~ngx-toastr/toastr';
 
-/* button {
-    width: 200px;
-    height: 30px;
-    border: none;
-    text-align: center;
-    background-color: #17a2b8;
-} */
-
 /* HTML  */
 /* <button class="button" role="button">Button</button> */
 
@@ -365,4 +357,13 @@
     .button-6 {
         padding: 8px 25px;
     }
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 50px;
+    border: #00E6F6;
+    border-style: double;
+    margin-top: 30px;
 }
