@@ -1,4 +1,4 @@
-<nav class="row">
+<nav class="row" style="margin: 10px;">
     <button routerLink="component-styling" routerLinkActive="active" class="button" role="button">Component
         Styling</button>
     <button routerLink="component-interaction" routerLinkActive="active" class="button" role="button">Component
@@ -12,5 +12,32 @@
         Menu</button>
     <button routerLink="angular-forms" routerLinkActive="active" class="button" role="button">Forms</button>
 </nav>
+<div class="row">
+    <div class="col-md-4">
+        <ng-template #nodeTemplate let-nodes="nodes" let-tree="tree">
+            <ng-container *ngFor="let node of nodes">
+                <div class="menu-node" [ngClass]=" { 'menu-node-tree' : tree }">
+                    <div (click)="toggleVisible(node)" class="menu-node-button" [ngClass]="{
+                'menu-node-button-show': node.submenu && node.submenu.length,
+                'menu-node-button-plus': !expand[node.index],
+                'menu-node-button-minus': expand[node.index]
+              }" role="button"></div>
+                    <div class="menu-node-name" [ngClass]="{
+                'menu-node-name-selected': (node === selectedNode)
+              }" (click)="selectNode(node)">{{ node.title }}</div>
+                    <ng-container *ngIf="node.submenu && node.submenu.length && expand[node.index]">
+                        <ng-template [ngTemplateOutlet]="nodeTemplate"
+                            [ngTemplateOutletContext]="{ nodes: node.submenu, tree: true }">
+                        </ng-template>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </ng-template>
 
-<router-outlet></router-outlet>
+        <ng-template [ngTemplateOutlet]="nodeTemplate" [ngTemplateOutletContext]="{ nodes: menu, tree: false }">
+        </ng-template>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

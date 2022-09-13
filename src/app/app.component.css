@@ -1,0 +1,97 @@
+.menu-node {
+    padding-left: 16px;
+}
+
+.menu-node-button {
+    width: 16px;
+    height: 16px;
+    border: 1px solid silver;
+    border-radius: 3px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    visibility: hidden;
+    cursor: pointer;
+    position: relative;
+    background-color: white;
+}
+
+.menu-node-button:hover {
+    background-color: #eee;
+}
+
+.menu-node-button-show {
+    visibility: visible;
+}
+
+.menu-node-button-plus:after {
+    position: absolute;
+    content: "+";
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.menu-node-button-minus:after {
+    position: absolute;
+    content: "-";
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.menu-node-name {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.menu-node-name:hover {
+    color: #666;
+}
+
+.menu-node-name-selected {
+    text-decoration: underline;
+    color: #666;
+}
+
+.menu-node-tree {
+    position: relative;
+}
+
+.menu-node>.menu-node-tree::after {
+    content: " ";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-left: 1px dotted silver;
+}
+
+.menu-node>.menu-node-tree:last-of-type::after {
+    bottom: 8px;
+}
+
+.menu-node>.menu-node-tree::before {
+    content: " ";
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 8px;
+    width: 32px;
+    border-bottom: 1px dotted silver;
+}
+
+.center-div {
+    margin: auto;
+    width: 50%;
+    padding: 50px;
+    margin-top: 20px;
+}
