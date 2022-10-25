@@ -172,5 +172,15 @@ export const Menu = [
         "labelClass": "",
         "extralink": false,
         "submenu": []
+    },
+    {
+        "path": "/host-listener",
+        "title": "Host Listener",
+        "icon": "mdi mdi-truck-fast",
+        "class": "",
+        "label": "",
+        "labelClass": "",
+        "extralink": false,
+        "submenu": []
     }
 ];

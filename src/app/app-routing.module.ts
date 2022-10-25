@@ -10,6 +10,7 @@ import { ParentComponent } from './components/component-interaction/parent/paren
 import { ViewComponent } from './components/view-encapsulation/view/view.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component';
+import { HostListenerComponent } from './components/host-listener/host-listener.component';
 
 const routes: Routes = [
   { path: 'component-styling', component: ComponentStylingComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'view-encapsulation', component: ViewComponent },
   { path: 'directives', component: DirectivesComponent },
   { path: 'ngx-toastr', component: NgxToastrComponent },
+  { path: 'host-listener', component: HostListenerComponent },
   {
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)

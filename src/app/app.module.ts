@@ -17,6 +17,8 @@ import { ComponentStylingComponent } from './components/conponent-styling/compon
 import { ViewComponent } from './components/view-encapsulation/view/view.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component';
+import { MouseEnterLeaveDirective } from './custom-directive/mouse-enter-leave.directive';
+import { HostListenerComponent } from './components/host-listener/host-listener.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component
     , ComponentStylingComponent
     , ViewComponent
     , DirectivesComponent
-    , NgxToastrComponent
+    , NgxToastrComponent, MouseEnterLeaveDirective, HostListenerComponent
   ]
   , imports: [
     BrowserModule
