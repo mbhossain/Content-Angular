@@ -182,5 +182,15 @@ export const Menu = [
         "labelClass": "",
         "extralink": false,
         "submenu": []
+    },
+    {
+        "path": "/student-list",
+        "title": "Search Student List",
+        "icon": "mdi mdi-truck-fast",
+        "class": "",
+        "label": "",
+        "labelClass": "",
+        "extralink": false,
+        "submenu": []
     }
 ];

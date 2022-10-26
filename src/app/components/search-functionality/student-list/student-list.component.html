@@ -1,0 +1,4 @@
+<app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+<ul *ngFor="let data of this.student">
+    <li *ngIf="searchText === '' || data.name.toLowerCase().includes(searchText)">{{data.name}}</li>
+</ul>

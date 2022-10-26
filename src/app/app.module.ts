@@ -19,6 +19,11 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component';
 import { MouseEnterLeaveDirective } from './custom-directive/mouse-enter-leave.directive';
 import { HostListenerComponent } from './components/host-listener/host-listener.component';
+import { StudentListComponent } from './components/search-functionality/student-list/student-list.component';
+import { SearchComponent } from './components/search-functionality/search/search.component';
+import { StudentService } from './services/student.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { HostListenerComponent } from './components/host-listener/host-listener.
     , ComponentStylingComponent
     , ViewComponent
     , DirectivesComponent
-    , NgxToastrComponent, MouseEnterLeaveDirective, HostListenerComponent
+    , NgxToastrComponent
+    , MouseEnterLeaveDirective
+    , HostListenerComponent
+    , StudentListComponent
+    , SearchComponent
   ]
   , imports: [
     BrowserModule
@@ -41,8 +50,10 @@ import { HostListenerComponent } from './components/host-listener/host-listener.
       , preventDuplicates: true
     })
     , AppRoutingModule
+    , HttpClientModule 
+    , FormsModule
   ],
-  providers: []
+  providers: [StudentService]
   , bootstrap: [AppComponent]
 })
 export class AppModule { }
