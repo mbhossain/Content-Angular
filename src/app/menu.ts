@@ -192,5 +192,26 @@ export const Menu = [
         "labelClass": "",
         "extralink": false,
         "submenu": []
+    },
+    {
+        "path": "/",
+        "title": "Navbar",
+        "icon": "mdi mdi-truck-fast",
+        "class": "",
+        "label": "",
+        "labelClass": "",
+        "extralink": false,
+        "submenu": [
+            {
+                "path": "/navbar-top",
+                "title": "Navbar Top",
+                "icon": "mdi mdi-truck-fast",
+                "class": "",
+                "label": "",
+                "labelClass": "",
+                "extralink": false,
+                "submenu": []
+            }
+        ]
     }
 ];

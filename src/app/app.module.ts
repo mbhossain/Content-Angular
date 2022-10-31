@@ -24,6 +24,7 @@ import { SearchComponent } from './components/search-functionality/search/search
 import { StudentService } from './services/student.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { FormsModule } from '@angular/forms';
     , MouseEnterLeaveDirective
     , HostListenerComponent
     , StudentListComponent
-    , SearchComponent
+    , SearchComponent, NavbarTopComponent
   ]
   , imports: [
     BrowserModule

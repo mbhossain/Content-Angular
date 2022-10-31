@@ -1,11 +1,16 @@
 <h3>Toastr Notifications Example</h3>
 
 <nav class="row" style="margin-left: 20px;">
-    <button (click)="showToasterSuccess()" class="button-3" role="button">Success</button>
-
-    <button (click)="showToasterError()" class="button-3" role="button">Error</button>
-
-    <button (click)="showToasterInfo()" class="button-3" role="button">Info</button>
-
-    <button (click)="showToasterWarning()" class="button-3" role="button">Warning</button>
+    <div class="col-md-2">
+        <button (click)="showToasterSuccess()" class="button-3" role="button">Success</button>
+    </div>
+    <div class="col-md-2">
+        <button (click)="showToasterError()" class="button-3" role="button">Error</button>
+    </div>
+    <div class="col-md-2">
+        <button (click)="showToasterInfo()" class="button-3" role="button">Info</button>
+    </div>
+    <div class="col-md-2">
+        <button (click)="showToasterWarning()" class="button-3" role="button">Warning</button>
+    </div>
 </nav>

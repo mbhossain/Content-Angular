@@ -12,6 +12,7 @@ import { DirectivesComponent } from './components/directives/directives.componen
 import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component';
 import { HostListenerComponent } from './components/host-listener/host-listener.component';
 import { StudentListComponent } from './components/search-functionality/student-list/student-list.component';
+import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.component';
 
 const routes: Routes = [
   { path: 'component-styling', component: ComponentStylingComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'ngx-toastr', component: NgxToastrComponent },
   { path: 'host-listener', component: HostListenerComponent },
   { path: 'student-list', component: StudentListComponent },
+  { path: 'navbar-top', component: NavbarTopComponent },
   {
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)
