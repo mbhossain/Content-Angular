@@ -1,0 +1,13 @@
+<h1>Single ng-content</h1>
+<app-item *ngFor="let item of items" [item]="item">
+  <input type="checkbox" [(ngModel)]="item.checked"/>
+</app-item>
+
+<button (click)="toggle()">Toggle checkboxes</button>
+
+<h1>Multiples ng-content</h1>
+<app-multiples>
+  <span title>Título</span>
+  <span description>Description</span>
+</app-multiples>
+

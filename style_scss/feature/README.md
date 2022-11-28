@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Description:
+1. ng content
+The ng-content is used when we want to insert the content dynamically inside the component that helps to increase component reusability. 
+
+Using ng-content we can pass content inside the component selector and when angular parses that content that appears at the place of ng-content.
