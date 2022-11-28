@@ -1,0 +1,10 @@
+<h1 #header>Joke Maker</h1>
+
+<h2>View Jokes</h2>
+<app-joke *ngFor="let joke of jokes" [joke]="joke">
+    <span class="setup">{{ joke.setup }}</span>
+    <p class="punchLine">{{ joke.punchLine }}</p>
+</app-joke>
+
+<h2>Content Jokes</h2>
+<ng-content></ng-content>
