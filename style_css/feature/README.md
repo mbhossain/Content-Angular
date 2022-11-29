@@ -34,4 +34,4 @@ The @ViewChild decorator in angular is used to access an HTML element, a compone
 
 Also remember that @ViewChild decorator returns the first matching element from the DOM and assign it to the property  which we have decorated it with @ViewChild.
 
-Accesss child component class in our parent component class.
+Accesss child component class in our parent component class. 
