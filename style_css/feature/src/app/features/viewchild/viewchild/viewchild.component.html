@@ -1,0 +1,11 @@
+<div>
+    <label>DOB: </label>
+    <input type="date" #dateInput (blur)="calculateAge()">
+</div>
+<div>
+    <label>Age: </label>
+    <input type="text" #ageInput>
+</div>
+
+<app-child></app-child>
+{{childComp.sayHi()}}

@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Description:
+1. viewchild
+
+The @ViewChild decorator in angular is used to access an HTML element, a component or a directive in the component class.
+
+Also remember that @ViewChild decorator returns the first matching element from the DOM and assign it to the property  which we have decorated it with @ViewChild.
+
+Accesss child component class in our parent component class.
