@@ -10,6 +10,9 @@ import { ChildComponent } from './features/viewchild/child/child.component';
 import { CourcesComponent } from './features/input-output-eventEmitter/cources/cources.component';
 import { FilterComponent } from './features/input-output-eventEmitter/filter/filter.component';
 import { ViewComponentIo } from './features/input-output-eventEmitter/view/view.component';
+import { NameEditorComponent } from './features/reactive-form/name-editor/name-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProfileEditorComponent } from './features/reactive-form/profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,12 @@ import { ViewComponentIo } from './features/input-output-eventEmitter/view/view.
     CourcesComponent,
     FilterComponent,
     ViewComponentIo,
+    NameEditorComponent,
+    ProfileEditorComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
