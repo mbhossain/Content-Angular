@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -9,7 +9,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 export class ProfileEditorComponent {
 
   profileForm = this.fb.group({
-    firstName: [''],
+    firstName: ['', Validators.required],
     lastName: [''],
     address: this.fb.group({
       street: [''],
@@ -17,6 +17,9 @@ export class ProfileEditorComponent {
       state: [''],
       zip: ['']
     }),
+    aliases: this.fb.array([
+      this.fb.control('')
+    ])
   });
 
   constructor(private fb: FormBuilder) { }
@@ -35,6 +38,7 @@ export class ProfileEditorComponent {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
+    console.warn(!this.profileForm.valid);
   }
 
   updateProfile() {
@@ -44,6 +48,14 @@ export class ProfileEditorComponent {
         street: '123 Drew Street'
       }
     });
+  }
+
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
   }
 
 }
