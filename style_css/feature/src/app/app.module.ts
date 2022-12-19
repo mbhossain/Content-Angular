@@ -11,8 +11,9 @@ import { CourcesComponent } from './features/input-output-eventEmitter/cources/c
 import { FilterComponent } from './features/input-output-eventEmitter/filter/filter.component';
 import { ViewComponentIo } from './features/input-output-eventEmitter/view/view.component';
 import { NameEditorComponent } from './features/reactive-form/name-editor/name-editor.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileEditorComponent } from './features/reactive-form/profile-editor/profile-editor.component';
+import { ValidateFormInputComponent } from './features/template-driven-form/validate-form-input/validate-form-input.component';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,11 @@ import { ProfileEditorComponent } from './features/reactive-form/profile-editor/
     ViewComponentIo,
     NameEditorComponent,
     ProfileEditorComponent,
+    ValidateFormInputComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [],
