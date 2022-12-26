@@ -25,6 +25,8 @@ import { StudentService } from './services/student.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.component';
+import { SecondComponent } from './components/share-data/second/second.component';
+import { FirstComponent } from './components/share-data/first/first.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,7 @@ import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.co
     , MouseEnterLeaveDirective
     , HostListenerComponent
     , StudentListComponent
-    , SearchComponent, NavbarTopComponent
+    , SearchComponent, NavbarTopComponent, SecondComponent, FirstComponent
   ]
   , imports: [
     BrowserModule

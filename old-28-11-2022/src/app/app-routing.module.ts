@@ -13,6 +13,8 @@ import { NgxToastrComponent } from './components/ngx-toastr/ngx-toastr.component
 import { HostListenerComponent } from './components/host-listener/host-listener.component';
 import { StudentListComponent } from './components/search-functionality/student-list/student-list.component';
 import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.component';
+import { FirstComponent } from './components/share-data/first/first.component';
+import { SecondComponent } from './components/share-data/second/second.component';
 
 const routes: Routes = [
   { path: 'component-styling', component: ComponentStylingComponent },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'host-listener', component: HostListenerComponent },
   { path: 'student-list', component: StudentListComponent },
   { path: 'navbar-top', component: NavbarTopComponent },
+  { path: 'share-data/first', component: FirstComponent },
+  { path: 'share-data/second', component: SecondComponent },
   {
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)

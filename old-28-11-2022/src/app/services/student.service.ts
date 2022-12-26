@@ -16,6 +16,6 @@ export class StudentService {
     // let x = this.http.get<Student[]>(this._url);
     // x.subscribe(data => console.log(data));
     // return x;
-    return this.http.get<Student[]>(this._url)
+    return this.http.get<Student[]>(this._url);
   }
 }

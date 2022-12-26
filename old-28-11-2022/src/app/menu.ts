@@ -213,5 +213,36 @@ export const Menu = [
                 "submenu": []
             }
         ]
+    },
+    {
+        "path": "/",
+        "title": "Share Data",
+        "icon": "mdi mdi-truck-fast",
+        "class": "",
+        "label": "",
+        "labelClass": "",
+        "extralink": false,
+        "submenu": [
+            {
+                "path": "share-data/first",
+                "title": "First",
+                "icon": "mdi mdi-truck-fast",
+                "class": "",
+                "label": "",
+                "labelClass": "",
+                "extralink": false,
+                "submenu": []
+            },
+            {
+                "path": "share-data/second",
+                "title": "Second",
+                "icon": "mdi mdi-truck-fast",
+                "class": "",
+                "label": "",
+                "labelClass": "",
+                "extralink": false,
+                "submenu": []
+            }
+        ]
     }
 ];
