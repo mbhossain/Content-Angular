@@ -1,0 +1,20 @@
+<h1 class="text-center">Subjects vs Behavior Subjects</h1>
+
+<div class="row justify-content-sm-center">
+  <div class="col-sm-5">
+    <div>Data change input: <input #dataInput type="text" class="form-control" /></div>
+  </div>
+</div>
+
+<div class="row justify-content-sm-center">
+  <div>
+    <button class="btn btn-warning" (click)="saveData(dataInput.value)">Subjects.next()</button>
+  </div>
+</div>
+
+<br />
+
+<app-subject></app-subject>
+<app-behavior-subject></app-behavior-subject>
+
+<app-subject-behavior-subject></app-subject-behavior-subject>
