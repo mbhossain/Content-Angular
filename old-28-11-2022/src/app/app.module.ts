@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.component';
 import { SecondComponent } from './components/share-data/second/second.component';
 import { FirstComponent } from './components/share-data/first/first.component';
+import { TimerComponent } from './components/timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { FirstComponent } from './components/share-data/first/first.component';
     , MouseEnterLeaveDirective
     , HostListenerComponent
     , StudentListComponent
-    , SearchComponent, NavbarTopComponent, SecondComponent, FirstComponent
+    , SearchComponent, NavbarTopComponent, SecondComponent, FirstComponent, TimerComponent
   ]
   , imports: [
     BrowserModule

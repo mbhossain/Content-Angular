@@ -15,6 +15,7 @@ import { StudentListComponent } from './components/search-functionality/student-
 import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.component';
 import { FirstComponent } from './components/share-data/first/first.component';
 import { SecondComponent } from './components/share-data/second/second.component';
+import { TimerComponent } from './components/timer/timer.component';
 
 const routes: Routes = [
   { path: 'component-styling', component: ComponentStylingComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'navbar-top', component: NavbarTopComponent },
   { path: 'share-data/first', component: FirstComponent },
   { path: 'share-data/second', component: SecondComponent },
+  { path: 'service-scope', component: TimerComponent },
   {
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)

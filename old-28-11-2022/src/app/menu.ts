@@ -244,5 +244,15 @@ export const Menu = [
                 "submenu": []
             }
         ]
-    }
+    },
+    {
+        "path": "/service-scope",
+        "title": "Service Scope",
+        "icon": "mdi mdi-truck-fast",
+        "class": "",
+        "label": "",
+        "labelClass": "",
+        "extralink": false,
+        "submenu": []
+    },
 ];
