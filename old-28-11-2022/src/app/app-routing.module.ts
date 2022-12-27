@@ -16,6 +16,9 @@ import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.co
 import { FirstComponent } from './components/share-data/first/first.component';
 import { SecondComponent } from './components/share-data/second/second.component';
 import { TimerComponent } from './components/timer/timer.component';
+import { HomeComponent } from './components/route-guards/components/home/home.component';
+import { ContactComponent } from './components/route-guards/components/contact/contact.component';
+import { AuthGuard } from './components/route-guards/guards/auth.guard';
 
 const routes: Routes = [
   { path: 'component-styling', component: ComponentStylingComponent },
@@ -29,6 +32,8 @@ const routes: Routes = [
   { path: 'share-data/first', component: FirstComponent },
   { path: 'share-data/second', component: SecondComponent },
   { path: 'service-scope', component: TimerComponent },
+  { path: 'home-use-guard', component: HomeComponent, data: { name: 'contact' } },
+  { path: 'contact-use-guard', component: ContactComponent, canActivate: [AuthGuard] },
   {
     path: 'authentication',
     loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule)

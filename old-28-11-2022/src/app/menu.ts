@@ -255,4 +255,35 @@ export const Menu = [
         "extralink": false,
         "submenu": []
     },
+    {
+        "path": "/",
+        "title": "Route Guards",
+        "icon": "mdi mdi-truck-fast",
+        "class": "",
+        "label": "",
+        "labelClass": "",
+        "extralink": false,
+        "submenu": [
+            {
+                "path": "home-use-guard",
+                "title": "Home",
+                "icon": "mdi mdi-truck-fast",
+                "class": "",
+                "label": "",
+                "labelClass": "",
+                "extralink": false,
+                "submenu": []
+            },
+            {
+                "path": "contact-use-guard",
+                "title": "Contact",
+                "icon": "mdi mdi-truck-fast",
+                "class": "",
+                "label": "",
+                "labelClass": "",
+                "extralink": false,
+                "submenu": []
+            }
+        ]
+    },
 ];

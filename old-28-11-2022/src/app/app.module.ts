@@ -28,6 +28,8 @@ import { NavbarTopComponent } from './components/navbar/navbar-top/navbar-top.co
 import { SecondComponent } from './components/share-data/second/second.component';
 import { FirstComponent } from './components/share-data/first/first.component';
 import { TimerComponent } from './components/timer/timer.component';
+import { HomeComponent } from './components/route-guards/components/home/home.component';
+import { ContactComponent } from './components/route-guards/components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { TimerComponent } from './components/timer/timer.component';
     , MouseEnterLeaveDirective
     , HostListenerComponent
     , StudentListComponent
-    , SearchComponent, NavbarTopComponent, SecondComponent, FirstComponent, TimerComponent
+    , SearchComponent, NavbarTopComponent, SecondComponent, FirstComponent, TimerComponent, HomeComponent, ContactComponent
   ]
   , imports: [
     BrowserModule
