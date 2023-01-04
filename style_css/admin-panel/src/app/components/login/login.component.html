@@ -1,0 +1,30 @@
+<div class="login">
+    <div class="container">
+        <div class="logo">SPACE STUDY LOGIN</div>
+        <div class="login-item">
+
+            <form (ngSubmit)="onSubmit(user.username?user.username:'',user.password?user.password:'')" #myForm="ngForm" class="form form-login">
+                <br />
+
+                <div class="form-field">
+                    <label class="user" for="login-username"><span class="hidden">Username</span></label>
+                    <input id="login-username" type="text" class="form-input" placeholder="Username" required
+                        [(ngModel)]="user.username" name="username">
+                </div>
+
+                <div class="form-field">
+                    <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+                    <input id="login-password" type="password" class="form-input" placeholder="Password" required
+                        [(ngModel)]="user.password" name="gpassword" [type]="hide ? 'password' : 'text'">
+                </div>
+
+
+                <div class="form-field" style=" flex-direction:column;">
+                    <input type="submit" value="Log in">
+                    <mat-progress-bar mode="indeterminate" *ngIf="showprogressbar"></mat-progress-bar>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

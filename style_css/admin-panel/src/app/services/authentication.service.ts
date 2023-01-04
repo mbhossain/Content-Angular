@@ -35,7 +35,7 @@ export class AuthenticationService {
 
 
 
-  login(username: string, password: string) {
+  login(username: string, password: string): any {
     this.user.username = username;
     this.user.password = password;
 
