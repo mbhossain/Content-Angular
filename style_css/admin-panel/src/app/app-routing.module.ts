@@ -8,7 +8,11 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
+  // { path: '**', component: NotFoundComponent },
+  {
+    path: 'main',
+    loadChildren: () => import('./modules/main/main.module').then(m => m.MainModule)
+  },
 ];
 
 @NgModule({

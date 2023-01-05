@@ -45,7 +45,7 @@ export class AuthenticationService {
       localStorage.setItem("user", this.user.username);
       this.userType.next(this.user.username);
 
-      this._router.navigate(['/Admin']);
+      this._router.navigate(['main']);
     }
 
     else {
