@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from 'src/app/components/not-found/not-found.component';
 import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
 import { AccountInfoComponent } from './components/pages/account-info/account-info.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
@@ -10,28 +11,27 @@ const routes: Routes = [
   {
     path: ''
     , component: MainComponent
-    // , children:
-    //   [
-    //     { path: 'dashboard', component: DashboardLayoutComponent },
-    //   ]
+    , children:
+      [
+        { path: '', redirectTo: 'home', pathMatch: 'full' },
+        {
+          path: 'home',
+          component: HomeComponent
+        },
+        {
+          path: 'dashbaord',
+          component: DashboardComponent
+        },
+        {
+          path: 'account',
+          component: AccountInfoComponent
+        },
+        {
+          path: '**',
+          component: NotFoundComponent
+        }
+      ]
   },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'dashbaord',
-    component: DashboardComponent
-  },
-  {
-    path: 'account',
-    component: AccountInfoComponent
-  },
-  {
-    path: '**',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
 ];
 
 @NgModule({

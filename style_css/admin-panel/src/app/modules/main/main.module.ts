@@ -9,6 +9,7 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
 import { AccountInfoComponent } from './components/pages/account-info/account-info.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/pages/home/home.component';
+import { SingleDoubleClickDirective } from './directives/single-double-click.directive';
 
 
 @NgModule({
@@ -19,11 +20,15 @@ import { HomeComponent } from './components/pages/home/home.component';
     NavigationBarComponent,
     AccountInfoComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    SingleDoubleClickDirective
   ],
   imports: [
     CommonModule,
     MainRoutingModule
+  ],
+  exports: [
+    SingleDoubleClickDirective
   ]
 })
 export class MainModule { }
