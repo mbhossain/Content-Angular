@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 import { user } from '../models/user';
 
@@ -13,7 +14,11 @@ export class AuthenticationService {
   user = new user;
   userType: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(this.getUserType());
 
-  constructor(private _router: Router) { }
+  constructor(
+    private _router: Router
+    , private _toastr: ToastrService
+
+  ) { }
 
   getUserType() {
     return localStorage.getItem('user')
@@ -49,7 +54,8 @@ export class AuthenticationService {
     }
 
     else {
-      alert("Please Enter Valid Username/Password..!!");
+      this._toastr.warning("Please Enter Valid Username/Password..!!", "Warning");
+      return
     }
   }
 }
