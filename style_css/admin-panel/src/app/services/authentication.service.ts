@@ -54,8 +54,7 @@ export class AuthenticationService {
     }
 
     else {
-      this._toastr.warning("Please Enter Valid Username/Password..!!", "Warning");
-      return
+      return this._toastr.warning("Please Enter Valid Username or Password!", "Warning");
     }
   }
 }
