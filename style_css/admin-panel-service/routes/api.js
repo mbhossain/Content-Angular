@@ -5,7 +5,7 @@ const User = require('../models/user');
 
 const mongoose = require('mongoose');
 const user = require('../models/user');
-const db = "mongodb+srv://mbhossain3108:mbhossain3108@cluster0.j255j2s.mongodb.net/eventsdb?retryWrites=true&w=majority"
+const db = "mongodb+srv://mbhossain3108:mbhossain3108@cluster0.j255j2s.mongodb.net/admin-panel?retryWrites=true&w=majority"
 
 mongoose.connect(db, err => {
     if (err) {
@@ -13,7 +13,7 @@ mongoose.connect(db, err => {
     } else {
         console.log('Connected to mongodb')
     }
-})
+});
 
 function verifyToken(req, res, next) {
     if (!req.headers.authorization) {
@@ -36,7 +36,7 @@ function verifyToken(req, res, next) {
 
 router.get('/', (req, res) => {
     res.send('From API route')
-})
+});
 
 router.post('/register', (req, res) => {
     let userData = req.body
@@ -50,7 +50,7 @@ router.post('/register', (req, res) => {
             res.status(200).send({ token })
         }
     })
-})
+});
 
 router.post('/login', (req, res) => {
     let userData = req.body
@@ -70,90 +70,6 @@ router.post('/login', (req, res) => {
                 }
         }
     })
-})
-
-router.get('/events', (req, res) => {
-    let events = [
-        {
-            "_id": "1",
-            "name": "Auto Expo",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "2",
-            "name": "Auto Expo",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "3",
-            "name": "Auto Expo",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "4",
-            "name": "Auto Expo",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "5",
-            "name": "Auto Expo",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "6",
-            "name": "Auto Expo",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        }
-    ]
-    res.json(events)
-})
-
-router.get('/special', verifyToken, (req, res) => {
-    let specialEvents = [
-        {
-            "_id": "1",
-            "name": "Auto Expo Special",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "2",
-            "name": "Auto Expo Special",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "3",
-            "name": "Auto Expo Special",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "4",
-            "name": "Auto Expo Special",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "5",
-            "name": "Auto Expo Special",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        },
-        {
-            "_id": "6",
-            "name": "Auto Expo Special",
-            "description": "lorem ipsum",
-            "date": "2012-04-23T18:25:43.511Z"
-        }
-    ]
-    res.json(specialEvents)
-})
+});
 
 module.exports = router
