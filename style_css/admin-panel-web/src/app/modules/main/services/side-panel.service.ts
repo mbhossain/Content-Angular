@@ -1,5 +1,10 @@
+/* Angular Stuff */
 import { Injectable } from '@angular/core';
+
+/* Third party */
 import { BehaviorSubject, Observable } from 'rxjs';
+
+/* Our own stuff */
 import { SidePanelState } from '../models/side-panel-state.enum';
 
 @Injectable({
