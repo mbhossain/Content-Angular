@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 /* Our own stuff */
-import { user } from 'src/app/models/user';
-import { AuthenticationService } from 'src/app/services/authentication.service';
+import { user } from 'src/app/auth/models/user';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -31,10 +31,8 @@ export class LoginComponent {
   }
 
   onSubmit() {
-
-    console.log('this.user:', this.user)
     this.showprogressbar = true;
-    
+
     // this.user.username = username;
     // this.user.password = password;
     // console.log("user details: " + this.user.username + this.user.password + this.user + "user");
@@ -45,13 +43,11 @@ export class LoginComponent {
     this._auth.loginUser(this.user)
       .subscribe(
         res => {
-          console.log('res:', res);
           localStorage.setItem('token', res.token);
           this._router.navigate(['main']);
         },
         err => {
-          console.log(err);
-          // return this._toastr.warning("Please Enter Valid Username or Password!", "Warning");
+          return this._toastr.error(err.statusText, "Error");
         }
       )
 

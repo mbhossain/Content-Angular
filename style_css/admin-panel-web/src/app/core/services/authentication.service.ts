@@ -8,15 +8,14 @@ import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 
 /* Our own stuff */
-import { user } from '../models/user';
-
-// let users = [new user('admin', '123'), new user('manager', '123')];
+import { user } from 'src/app/auth/models/user';
+import { url } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private _loginUrl = "http://localhost:3000/api/login";
+  private serverPath = url.apiUrl;
 
   user = new user;
   userType: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(this.getUserType());
@@ -65,7 +64,7 @@ export class AuthenticationService {
   // }
 
   loginUser(user: any) {
-    return this.http.post<any>(this._loginUrl, user)
+    return this.http.post<any>(this.serverPath + 'login', user)
   }
 
 

@@ -12,9 +12,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
-import { LoginComponent } from './components/login/login.component';
-import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { ForgotPasswordComponent } from './auth/components/forgot-password/forgot-password.component';
+import { NotFoundComponent } from './auth/components/not-found/not-found.component';
 
 
 
