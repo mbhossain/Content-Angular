@@ -3,13 +3,13 @@
         <div class="logo">SPACE STUDY LOGIN</div>
         <div class="login-item">
 
-            <form (ngSubmit)="onSubmit(user.username?user.username:'',user.password?user.password:'')" #myForm="ngForm" class="form form-login">
+            <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form form-login">
                 <br />
 
                 <div class="form-field">
                     <label class="user" for="login-username"><span class="hidden">Username</span></label>
                     <input id="login-username" type="text" class="form-input" placeholder="Username" required
-                        [(ngModel)]="user.username" name="username">
+                        [(ngModel)]="user.email" name="username">
                 </div>
 
                 <div class="form-field">
