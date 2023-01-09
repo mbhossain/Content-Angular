@@ -1,6 +1,6 @@
 <div class="login">
     <div class="container">
-        <div class="logo">SPACE STUDY LOGIN</div>
+        <div class="logo">ADMIN PANEL LOGIN</div>
         <div class="login-item">
 
             <form (ngSubmit)="onSubmit()" #myForm="ngForm" class="form form-login">
@@ -24,9 +24,13 @@
                     <mat-progress-bar mode="indeterminate" *ngIf="showprogressbar"></mat-progress-bar>
                 </div>
 
+                <div class="form-field">
+                    <button mat-button color="warn" type="button" (click)="OpenModal()">Forgot Password</button>
+                    &nbsp;<pre><i>Or</i></pre>&nbsp;
+                    <button mat-button color="accent" type="button" (click)="OpenModal()">Sign Up</button>
+                </div>
+
             </form>
         </div>
     </div>
 </div>
-
-<button mat-flat-button  color="primary" type="button" (click)="OpenModal()" style="margin:0px 20px;">Open Modal</button>
