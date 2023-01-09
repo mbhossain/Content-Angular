@@ -10,6 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 /* Our own stuff */
 import { user } from 'src/app/auth/models/user';
 import { url } from '../config';
+import { BaseDataService } from './base-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class AuthenticationService {
     private _router: Router
     , private _toastr: ToastrService
     , private http: HttpClient
+    , private apiService: BaseDataService
 
   ) { }
 
@@ -64,7 +66,7 @@ export class AuthenticationService {
   // }
 
   loginUser(user: any) {
-    return this.http.post<any>(this.serverPath + 'login', user)
+    return this.apiService.save<any>(this.serverPath + 'login', user)
   }
 
 

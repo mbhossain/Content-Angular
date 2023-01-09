@@ -47,7 +47,7 @@ export class LoginComponent {
           this._router.navigate(['main']);
         },
         err => {
-          return this._toastr.error(err.statusText, "Error");
+          return this._toastr.error(err.statusText ? err.statusText : 'Please Enter Valid Username or Password!', "Error");
         }
       )
 
