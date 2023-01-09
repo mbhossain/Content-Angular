@@ -15,6 +15,7 @@ import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './auth/components/login/login.component';
 import { ForgotPasswordComponent } from './auth/components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './auth/components/not-found/not-found.component';
+import { RegisterComponent } from './auth/components/register/register.component';
 
 
 
@@ -24,7 +25,8 @@ import { NotFoundComponent } from './auth/components/not-found/not-found.compone
     AppComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule
