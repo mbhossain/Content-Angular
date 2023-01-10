@@ -7,21 +7,20 @@
                 <br />
 
                 <div class="form-field">
-                    <label class="user" for="login-username"><span class="hidden">Email</span></label>
+                    <label class="user" for="login-username"><i class="fa fa-envelope" aria-hidden="true"></i></label>
                     <input id="login-username" type="text" class="form-input" placeholder="Email" required
                         [(ngModel)]="user.email" name="username">
                 </div>
 
                 <div class="form-field">
-                    <label class="lock" for="login-password"><span class="hidden">Password</span></label>
+                    <label class="lock" for="login-password"><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
                     <input id="login-password" type="password" class="form-input" placeholder="Password" required
                         [(ngModel)]="user.password" name="gpassword" [type]="hide ? 'password' : 'text'">
                 </div>
 
 
-                <div class="form-field" style=" flex-direction:column;">
+                <div class="form-field">
                     <input type="submit" value="Sign in">
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <mat-progress-bar mode="indeterminate" *ngIf="showprogressbar"></mat-progress-bar>
                 </div>
 

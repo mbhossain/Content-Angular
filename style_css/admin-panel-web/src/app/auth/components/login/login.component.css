@@ -51,13 +51,13 @@ input {
 }
 
 .user:before {
-    content: '\f007';
+    /* content: '\f007'; */
     font: 14px fontawesome;
     color: #5b5b5b;
 }
 
 .lock:before {
-    content: '\f023';
+    /* content: '\f023'; */
     font: 14px fontawesome;
     color: #5b5b5b;
 }

@@ -69,5 +69,12 @@ export class AuthenticationService {
     return this.apiService.save<any>(this.serverPath + 'login', user)
   }
 
+  registerUSer(email: string, password: string, username: string) {
+    // firebase.auth().createUserWithEmailAndPassword(email, password)
+    //   .catch(
+    //   error => console.log(error)
+    //   )
+  }
+
 
 }

@@ -20,7 +20,7 @@ import { ForgotPasswordComponent } from '../forgot-password/forgot-password.comp
 export class LoginComponent {
   public registerDialogRef!: MatDialogRef<RegisterComponent>;
   public forgetPasswordDialogRef!: MatDialogRef<ForgotPasswordComponent>;
-  public name: string = "";
+  public name: string = 'Register';
 
   public hide = true;
   public errorMsg = '';
@@ -37,7 +37,9 @@ export class LoginComponent {
   openModal() {
     this.registerDialogRef = this._matDialog.open(RegisterComponent, {
       data: { name: this.name },
-      disableClose: true
+      disableClose: true,
+      // height: '100%',
+      // width: '100%'
     });
 
     this.registerDialogRef.afterClosed().subscribe(res => {
