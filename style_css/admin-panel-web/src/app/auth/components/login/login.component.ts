@@ -4,16 +4,13 @@ import { Router } from '@angular/router';
 
 /* Third party */
 import { ToastrService } from 'ngx-toastr';
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA
-} from "@angular/material/dialog";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 
 /* Our own stuff */
 import { user } from 'src/app/auth/models/user';
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
 import { RegisterComponent } from '../register/register.component';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +18,9 @@ import { RegisterComponent } from '../register/register.component';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  matDialogRef!: MatDialogRef<RegisterComponent>;
-  name: string = "";
+  public registerDialogRef!: MatDialogRef<RegisterComponent>;
+  public forgetPasswordDialogRef!: MatDialogRef<ForgotPasswordComponent>;
+  public name: string = "";
 
   public hide = true;
   public errorMsg = '';
@@ -33,16 +31,29 @@ export class LoginComponent {
     private _router: Router
     , private _auth: AuthenticationService
     , private _toastr: ToastrService
-    , private matDialog: MatDialog
+    , private _matDialog: MatDialog
   ) { }
 
-  OpenModal() {
-    this.matDialogRef = this.matDialog.open(RegisterComponent, {
+  openModal() {
+    this.registerDialogRef = this._matDialog.open(RegisterComponent, {
       data: { name: this.name },
       disableClose: true
     });
 
-    this.matDialogRef.afterClosed().subscribe(res => {
+    this.registerDialogRef.afterClosed().subscribe(res => {
+      if ((res == true)) {
+        this.name = "";
+      }
+    });
+  }
+
+  forgotPassWord() {
+    this.forgetPasswordDialogRef = this._matDialog.open(ForgotPasswordComponent, {
+      data: { name: this.name },
+      disableClose: true
+    });
+
+    this.forgetPasswordDialogRef.afterClosed().subscribe(res => {
       if ((res == true)) {
         this.name = "";
       }

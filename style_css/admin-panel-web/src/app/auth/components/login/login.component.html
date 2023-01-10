@@ -7,8 +7,8 @@
                 <br />
 
                 <div class="form-field">
-                    <label class="user" for="login-username"><span class="hidden">Username</span></label>
-                    <input id="login-username" type="text" class="form-input" placeholder="Username" required
+                    <label class="user" for="login-username"><span class="hidden">Email</span></label>
+                    <input id="login-username" type="text" class="form-input" placeholder="Email" required
                         [(ngModel)]="user.email" name="username">
                 </div>
 
@@ -20,14 +20,16 @@
 
 
                 <div class="form-field" style=" flex-direction:column;">
-                    <input type="submit" value="Log in">
+                    <input type="submit" value="Sign in">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
                     <mat-progress-bar mode="indeterminate" *ngIf="showprogressbar"></mat-progress-bar>
                 </div>
 
                 <div class="form-field">
-                    <button mat-button color="warn" type="button" (click)="OpenModal()">Forgot Password</button>
-                    &nbsp;<pre><i>Or</i></pre>&nbsp;
-                    <button mat-button color="accent" type="button" (click)="OpenModal()">Sign Up</button>
+                    <button mat-button color="warn" type="button" (click)="forgotPassWord()">
+                        <i class="fa fa-key" aria-hidden="true"></i> Forget Password</button>
+                    <button mat-button type="button" (click)="openModal()" style="color: white;">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</button>
                 </div>
 
             </form>
