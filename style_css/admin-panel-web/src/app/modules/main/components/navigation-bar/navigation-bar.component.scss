@@ -9,6 +9,9 @@ $nav-panel-active: darken(#38495F, 2%);
     height: 75px;
     line-height: 75px;
     border-bottom: 1px solid darken($background, 5%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     .toggler {
         display: flex;
@@ -24,5 +27,27 @@ $nav-panel-active: darken(#38495F, 2%);
             fill: darken($background, 10%);
             cursor: pointer;
         }
+    }
+
+    .logout {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        width: 75px;
+        border-left: 1px solid darken($background, 5%);
+        text-align: center;
+
+        span {
+            fill: darken($background, 10%);
+            cursor: pointer;
+        }
+
+        span:hover {
+            color: rgb(230, 17, 59);
+        }
+
+
     }
 }
