@@ -40,7 +40,7 @@ export class AuthenticationService {
 
 
   get isSuperAdmin() {
-    if (this.user.username === "admin") {
+    if (this.user.user_name === "admin") {
       return true;
     } else {
       return false;
@@ -65,15 +65,12 @@ export class AuthenticationService {
   //   }
   // }
 
-  loginUser(user: any) {
+  loginUser(user: {}) {
     return this.apiService.save<any>(this.serverPath + 'login', user)
   }
 
-  registerUSer(email: string, password: string, username: string) {
-    // firebase.auth().createUserWithEmailAndPassword(email, password)
-    //   .catch(
-    //   error => console.log(error)
-    //   )
+  registerUSer(user: {}) {
+    return this.apiService.save<any>(this.serverPath + 'register', user)
   }
 
 
