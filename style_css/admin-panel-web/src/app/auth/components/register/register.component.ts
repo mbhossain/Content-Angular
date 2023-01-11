@@ -17,9 +17,10 @@ import { user } from '../../models/user';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  registerForm!: FormGroup;
-  fieldRequired: string = "This field is required";
+  public registerForm!: FormGroup;
+  public fieldRequired: string = "This field is required";
   public user = new user();
+  public hide:boolean = true;
 
   constructor(
     private _mdr: MatDialogRef<RegisterComponent>
