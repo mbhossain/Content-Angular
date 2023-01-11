@@ -22,10 +22,10 @@ export class LoginComponent {
   public forgetPasswordDialogRef!: MatDialogRef<ForgotPasswordComponent>;
   public name: string = 'Register';
 
-  public hide = true;
   public errorMsg = '';
   public user = new user();
   public showprogressbar: boolean = false;
+  public showPasswordOnPress: boolean = true;
 
   constructor(
     private _router: Router
@@ -62,31 +62,20 @@ export class LoginComponent {
     });
   }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   onSubmit() {
     this.showprogressbar = true;
 
-    // this.user.username = username;
-    // this.user.password = password;
-    // console.log("user details: " + this.user.username + this.user.password + this.user + "user");
-    // if (!this.auth.login(this.user.username, this.user.password)) {
-    //   this.errorMsg = 'Failed to login';
-    // }
-
     this._auth.loginUser(this.user)
-      .subscribe(
-        res => {
-          localStorage.setItem('token', res.token);
-          this._router.navigate(['main']);
-        },
+      .subscribe(res => {
+        localStorage.setItem('token', res.token);
+        this._router.navigate(['main']);
+      },
         err => {
           return this._toastr.error(err.statusText ? err.statusText : 'Please Enter Valid Username or Password!', "Error");
         }
       )
-
   }
 
 }

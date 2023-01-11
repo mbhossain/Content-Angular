@@ -26,7 +26,9 @@
 
           <mat-form-field class="mat-form-field-width">
             <mat-icon matPrefix>lock_outline</mat-icon>
-            <input type="password" autocomplete="false" matInput placeholder="Password *" formControlName="password">
+            <input type="password" autocomplete="false" matInput placeholder="Password *"
+              [type]="hide ? 'password' : 'text'" formControlName="password">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             <mat-hint>Password of at least eight characters, one uppercase letter and one number</mat-hint>
             <mat-error *ngIf="checkValidation('password')">
               {{ getErrorPassword() }}
@@ -35,8 +37,8 @@
 
           <hr style="margin-top: 20px;">
           <div class="socialMediaFlex">
-            <button style="width:50%; margin-bottom: 10px;" [disabled]="registerForm.invalid" type="submit" mat-raised-button
-              color="primary">Submit</button>
+            <button style="width:50%; margin-bottom: 10px;" [disabled]="registerForm.invalid" type="submit"
+              mat-raised-button color="primary">Submit</button>
           </div>
 
         </form>

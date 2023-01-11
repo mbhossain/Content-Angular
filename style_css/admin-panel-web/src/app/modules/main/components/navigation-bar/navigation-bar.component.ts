@@ -28,7 +28,7 @@ export class NavigationBarComponent implements OnInit {
     console.log('single click');
     if (this.currentPanelState === SidePanelState.CLOSE || this.currentPanelState === SidePanelState.COLLAPSE) {
       this._sidePanelService.changeState(SidePanelState.OPEN);
-    } else { 
+    } else {
       this._sidePanelService.changeState(SidePanelState.COLLAPSE);
     }
   }
@@ -40,6 +40,10 @@ export class NavigationBarComponent implements OnInit {
     } else {
       this._sidePanelService.changeState(SidePanelState.CLOSE);
     }
+  }
+
+  public signOut() {
+    alert('Sign out working');
   }
 
   ngOnDestroy(): void {

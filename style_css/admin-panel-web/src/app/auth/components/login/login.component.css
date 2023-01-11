@@ -119,6 +119,12 @@ input {
     margin-bottom: 2rem;
 }
 
+.password-show-hide {
+    color: black;
+    margin: -25px;
+    margin-top: 19px;
+}
+
 
 .hidden {
     border: 0;

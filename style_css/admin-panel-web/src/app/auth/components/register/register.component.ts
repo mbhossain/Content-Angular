@@ -2,7 +2,14 @@
 import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { Router } from '@angular/router';
+
+/* Third party */
+import { ToastrService } from 'ngx-toastr';
+
+/* Our own stuff */
 import { AuthenticationService } from 'src/app/core/services/authentication.service';
+import { user } from '../../models/user';
 
 @Component({
   selector: 'app-register',
@@ -10,13 +17,17 @@ import { AuthenticationService } from 'src/app/core/services/authentication.serv
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  registerForm!: FormGroup;
-  fieldRequired: string = "This field is required"
+  public registerForm!: FormGroup;
+  public fieldRequired: string = "This field is required";
+  public user = new user();
+  public hide:boolean = true;
 
   constructor(
     private _mdr: MatDialogRef<RegisterComponent>
     , @Inject(MAT_DIALOG_DATA) data: any
     , private auth: AuthenticationService
+    , private _toastr: ToastrService
+    , private _router: Router
   ) { }
 
   ngOnInit() {
@@ -24,7 +35,7 @@ export class RegisterComponent {
   }
 
   CloseDialog() {
-    this._mdr.close(false)
+    this._mdr.close(false);
   }
 
   createForm() {
@@ -62,11 +73,20 @@ export class RegisterComponent {
   }
 
   onSubmit(formData: FormGroup, formDirective: FormGroupDirective): void {
-
-    const email = formData.value.email;
-    const password = formData.value.password;
-    const username = formData.value.username;
-    this.auth.registerUSer(email, password, username);
+    this.user.email = formData.value.email;
+    this.user.password = formData.value.password;
+    this.user.user_name = formData.value.username;
+    this.auth.registerUSer(this.user).subscribe(
+      res => {
+        // localStorage.setItem('token', res.token);
+        this._mdr.close(false);
+        this._router.navigate(['login']);
+        return this._toastr.success('Registration successfully!', "success");
+      },
+      err => {
+        return this._toastr.error(err.statusText ? err.statusText : 'Unknown error!', "Error");
+      }
+    );
     formDirective.resetForm();
     this.registerForm.reset();
   }

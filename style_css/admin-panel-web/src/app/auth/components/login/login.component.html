@@ -15,7 +15,14 @@
                 <div class="form-field">
                     <label class="lock" for="login-password"><i class="fa fa-unlock-alt" aria-hidden="true"></i></label>
                     <input id="login-password" type="password" class="form-input" placeholder="Password" required
-                        [(ngModel)]="user.password" name="gpassword" [type]="hide ? 'password' : 'text'">
+                        [(ngModel)]="user.password" name="gpassword" [type]="showPasswordOnPress ? 'password' : 'text'">
+
+                    <div (mousedown)="showPasswordOnPress = !showPasswordOnPress"
+                        (mouseup)="showPasswordOnPress = !showPasswordOnPress">
+                        <i alt="show" class="fas fa-eye eye-show password-show-hide" *ngIf="!showPasswordOnPress"></i>
+                        <i alt="hide" class="fas fa-eye-slash eye-hide password-show-hide"
+                            *ngIf="showPasswordOnPress"></i>
+                    </div>
                 </div>
 
 
