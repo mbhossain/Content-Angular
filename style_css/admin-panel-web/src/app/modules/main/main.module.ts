@@ -12,6 +12,7 @@ import { AccountInfoComponent } from './components/pages/account-info/account-in
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { SingleDoubleClickDirective } from './directives/single-double-click.directive';
+import { CategoryListComponent } from './components/pages/categories/category-list/category-list.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { SingleDoubleClickDirective } from './directives/single-double-click.dir
     AccountInfoComponent,
     DashboardComponent,
     HomeComponent,
-    SingleDoubleClickDirective
+    SingleDoubleClickDirective,
+    CategoryListComponent
   ],
   imports: [
     CommonModule,

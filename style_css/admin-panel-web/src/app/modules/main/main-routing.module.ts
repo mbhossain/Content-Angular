@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from 'src/app/auth/components/not-found/not-found.component';
 import { AuthenticationGuard } from 'src/app/auth/services/authentication.guard';
 import { AccountInfoComponent } from './components/pages/account-info/account-info.component';
+import { CategoryListComponent } from './components/pages/categories/category-list/category-list.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { MainComponent } from './main.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
           path: 'account',
           component: AccountInfoComponent,
           canActivate: [AuthenticationGuard]
+        },
+        {
+          path: 'categories',
+          component: CategoryListComponent,
         },
         {
           path: '**',

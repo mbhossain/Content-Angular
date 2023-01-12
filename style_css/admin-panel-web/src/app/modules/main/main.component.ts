@@ -31,8 +31,9 @@ export class MainComponent implements OnInit {
   private createLinks() {
     this.links = [
       new NavigationLink("Home", ['home'], "fas fa-home"),
-      new NavigationLink("Dashboard", ['dashbaord'], "fas fa-tachometer-alt"),
-      new NavigationLink("Account Info", ['account'], "fas fa-user-circle")
+      new NavigationLink("Dashboard", ['dashbaord'], "fas fa-tachometer-alt fa-spin"),
+      new NavigationLink("Account Info", ['account'], "fas fa-user fa-spin"),
+      new NavigationLink("Categories", ['categories'], "fa fa-university fa-spin")
     ]
   }
 
