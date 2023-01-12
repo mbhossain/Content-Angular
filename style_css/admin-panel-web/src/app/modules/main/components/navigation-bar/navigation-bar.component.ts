@@ -1,8 +1,15 @@
+/* Angular Stuff */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+/* Third party */
 import { Subject } from 'rxjs';
-import { SidePanelState } from '../../models/side-panel-state.enum';
 import { takeUntil } from 'rxjs/operators';
+
+/* Our own stuff */
+import { SidePanelState } from '../../models/side-panel-state.enum';
 import { SidePanelService } from '../../services/side-panel.service';
+import { AuthenticationService } from 'src/app/core/services/authentication.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -13,7 +20,11 @@ export class NavigationBarComponent implements OnInit {
   private _subscriptionsSubject$: Subject<void>;
   public currentPanelState!: SidePanelState;
 
-  constructor(private _sidePanelService: SidePanelService) {
+  constructor(
+    private _sidePanelService: SidePanelService
+    , private _authService: AuthenticationService
+    , private _router: Router
+  ) {
     this._subscriptionsSubject$ = new Subject<void>();
   }
 
@@ -43,7 +54,8 @@ export class NavigationBarComponent implements OnInit {
   }
 
   public signOut() {
-    alert('Sign out working');
+    this._authService.logoutUser();
+    this._router.navigate(['/login']);
   }
 
   ngOnDestroy(): void {
