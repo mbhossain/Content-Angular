@@ -1,6 +1,8 @@
+/* Angular Stuff */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+/* Our own stuff */
 import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main.component';
 import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';

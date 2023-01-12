@@ -1,6 +1,10 @@
+/* Angular Stuff */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+/* Our own stuff */
 import { NotFoundComponent } from 'src/app/auth/components/not-found/not-found.component';
+import { AuthenticationGuard } from 'src/app/auth/services/authentication.guard';
 import { AccountInfoComponent } from './components/pages/account-info/account-info.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 import { HomeComponent } from './components/pages/home/home.component';
@@ -15,15 +19,18 @@ const routes: Routes = [
         { path: '', redirectTo: 'home', pathMatch: 'full' },
         {
           path: 'home',
-          component: HomeComponent
+          component: HomeComponent,
+          // canActivate: [AuthenticationGuard]
         },
         {
           path: 'dashbaord',
-          component: DashboardComponent
+          component: DashboardComponent,
+          canActivate: [AuthenticationGuard]
         },
         {
           path: 'account',
-          component: AccountInfoComponent
+          component: AccountInfoComponent,
+          canActivate: [AuthenticationGuard]
         },
         {
           path: '**',
