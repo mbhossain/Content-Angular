@@ -27,4 +27,9 @@ export class BaseDataService {
       // this.headerProvd.getHeader('application/json')
     ).pipe(catchError(this.formatErrors));
   }
+
+  getCategory() {
+    return this._http.get<any>('http://localhost:3000/api/get-all');
+  }
+
 }

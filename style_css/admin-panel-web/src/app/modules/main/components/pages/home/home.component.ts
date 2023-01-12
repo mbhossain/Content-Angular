@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BaseDataService } from 'src/app/core/services/base-data.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  constructor(private test: BaseDataService) {
 
+  }
+  ngOnInit() {
+    this.test.getCategory().subscribe(res => console.log(res));
+  }
 }
