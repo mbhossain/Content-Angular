@@ -67,6 +67,13 @@ export class LoginComponent {
   onSubmit() {
     this.showprogressbar = true;
 
+    const isMailOrUsername = !!this.user.username?.includes('@');
+
+    if (isMailOrUsername) {
+      this.user.email = this.user.username;
+      delete this.user.username;
+    }
+
     this._auth.loginUser(this.user)
       .subscribe(res => {
         localStorage.setItem('token', res.token);

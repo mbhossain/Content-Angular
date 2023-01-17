@@ -75,10 +75,11 @@ export class RegisterComponent {
   onSubmit(formData: FormGroup, formDirective: FormGroupDirective): void {
     this.user.email = formData.value.email;
     this.user.password = formData.value.password;
-    this.user.user_name = formData.value.username;
+    this.user.username = formData.value.username;
     this.auth.registerUSer(this.user).subscribe(
       res => {
         // localStorage.setItem('token', res.token);
+        console.log('res:',res)
         this._mdr.close(false);
         this._router.navigate(['login']);
         return this._toastr.success('Registration successfully!', "success");

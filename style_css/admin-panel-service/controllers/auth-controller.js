@@ -16,8 +16,15 @@ export const register = async (req, res, next) => {
             password: hash
         })
 
-        await newUser.save();
-        res.status(200).send('User has been created.')
+        await newUser.save((error, registeredUser) => {
+            if (error) {
+                console.log(error)
+            } else {
+                let payload = { subject: registeredUser._id }
+                let token = jwt.sign(payload, 'secretKey')
+                res.status(200).send({ token })
+            }
+        });
 
     } catch (err) {
         next(err)
@@ -27,7 +34,12 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
     try {
-        const user = await User.findOne({ username: req.body.username });
+        const user = await User.findOne({
+            $or: [
+                { email: req.body.email },
+                { username: req.body.username }
+            ]
+        });
         if (!user) return next(createError(404, 'User not found!'));
 
         const isPasswordCorrect = await bcrypt.compare(

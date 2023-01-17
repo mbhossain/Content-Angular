@@ -10,7 +10,5 @@ export class HomeComponent {
   constructor(private test: BaseDataService) {
 
   }
-  ngOnInit() {
-    this.test.getCategory().subscribe(res => console.log(res));
-  }
+  ngOnInit() { }
 }
