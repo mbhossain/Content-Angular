@@ -5,7 +5,7 @@ import {
     , deleteUser
     , getUser
     , getUsers
-} from '../controllers/user.js'
+} from '../controllers/user-controller.js'
 import {
     verifyToken
     , verifyUser

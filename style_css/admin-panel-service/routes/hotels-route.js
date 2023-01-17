@@ -7,7 +7,7 @@ import {
     , deleteHotel
     , getHotel
     , getHotels
-} from '../controllers/hotel.js'
+} from '../controllers/hotel-controller.js'
 import { verifyAdmin } from '../utils/verifyToken.js'
 
 

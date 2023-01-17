@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 
-import authRoute from "./routes/auth.js";
-import usersRoute from "./routes/users.js";
-import hotelsRoute from "./routes/hotels.js";
-import roomsRoute from "./routes/rooms.js";
+import authRoute from "./routes/auth-route.js";
+import usersRoute from "./routes/users-route.js";
+import hotelsRoute from "./routes/hotels-route.js";
+import roomsRoute from "./routes/rooms-route.js";
 import cors from "cors"
 
 
