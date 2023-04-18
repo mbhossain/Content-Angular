@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MaimComponent } from './components/maim/maim.component';
-import { SubComponent } from './components/sub/sub.component';
+import { HomeComponent } from './components/home/home.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
 import { ResolveService } from './resolve-service/resolve.service';
 
 const routes: Routes = [
-  { path: '', component: MaimComponent },
-  { path: 'sub', component: SubComponent, resolve: { data: ResolveService } },
+  { path: '', component: HomeComponent },
+  { path: 'student-list', component: StudentListComponent, resolve: { data: ResolveService } },
 ];
 
 @NgModule({

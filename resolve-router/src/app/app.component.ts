@@ -16,6 +16,6 @@ export class AppComponent {
   }
 
   sub() {
-    this.router.navigate(['/sub']);
+    this.router.navigate(['/student-list']);
   }
 }

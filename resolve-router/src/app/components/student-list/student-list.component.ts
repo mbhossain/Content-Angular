@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-sub',
-  templateUrl: './sub.component.html',
-  styleUrls: ['./sub.component.css']
+  selector: 'student-list-sub',
+  templateUrl: './student-list.component.html',
+  styleUrls: ['./student-list.component.css']
 })
-export class SubComponent implements OnInit {
+export class StudentListComponent implements OnInit {
   studentList: any;
 
   constructor(private route: ActivatedRoute) {
